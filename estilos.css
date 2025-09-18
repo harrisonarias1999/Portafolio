@@ -311,6 +311,13 @@ body {
   animation: slide 20s linear infinite;
 }
 
+/* En móvil (pantallas menores a 768px) */
+@media (max-width: 768px) {
+  .carousel-inner {
+    animation: slide 8s linear infinite; /* Más rápido en móvil */
+  }
+}
+
 .carousel-inner img {
   flex: 0 0 auto;
   width: 100%;
@@ -319,15 +326,23 @@ body {
   border-radius:var(--radius-m);
 }
 
+@media (max-width: 768px) {
+  .carousel-inner img {
+    max-width: 200px; /* Reduce el tamaño en móvil */
+  }
+}
+
 /* Animación infinita */
 @keyframes slide {
   from {
     transform: translateX(0);
   }
   to {
-    transform: translateX(-50%); /* Solo hasta la mitad (porque duplicamos las imágenes) */
+    transform: translateX(-66.6%); /* Solo hasta la mitad (porque duplicamos las imágenes) */
   }
 }
+
+
 
 /*Cards proyectos Home*/
 
