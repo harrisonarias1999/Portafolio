@@ -859,5 +859,16 @@ a.primary-button:hover {
   text-decoration: none;
 }
 
+.copy {
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: var(--space-64);
+}
 
+.copy p {
+  font-size: var(--body-s);
+  color: var(--placeholder-color);
+  text-align: center;
+}
 
