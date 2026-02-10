@@ -872,3 +872,13 @@ a.primary-button:hover {
   text-align: center;
 }
 
+.hero-project p {
+  font-size: var(--body-s);
+  color: var(--placeholder-color);
+  text-align: center;
+  }
+
+  .hero-project {
+  gap: var(--space-16);
+  padding-bottom: var(--space-48);
+  }
