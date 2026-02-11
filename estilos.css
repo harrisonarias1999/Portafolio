@@ -578,7 +578,7 @@ body {
 .process-project p{
   color: var(--text-color);
   font-size: var(--body-m);
-  line-height: var(--line-height-body-m);
+  line-height: var(--line-height-body-l);
 }
 
 
@@ -882,3 +882,7 @@ a.primary-button:hover {
   gap: var(--space-16);
   padding-bottom: var(--space-48);
   }
+
+
+
+  
