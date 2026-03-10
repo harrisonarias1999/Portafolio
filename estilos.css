@@ -883,6 +883,12 @@ a.primary-button:hover {
   padding-bottom: var(--space-48);
   }
 
-
+.contenedor-del-boton {
+  display: flex;
+  justify-content: center; /* Esto lo centra horizontalmente */
+  align-items: center;     /* Esto lo centra verticalmente si el contenedor tiene altura */
+  width: 100%;             /* Asegura que ocupe todo el ancho */
+  padding: 20px 0;         /* Espaciado opcional arriba y abajo */
+}
 
   
