@@ -338,7 +338,7 @@ body {
     transform: translateX(0);
   }
   to {
-    transform: translateX(-66.6%); /* Solo hasta la mitad (porque duplicamos las imágenes) */
+    transform: translateX(calc(-200% / 3)); /* Avanza exactamente 2 de las 3 tandas duplicadas, para que el reinicio del loop sea perfectamente invisible */
   }
 }
 
@@ -359,6 +359,7 @@ body {
    z-index: 2;
 }
 
+.projects h1,
 .projects h2 {
     color: var(--text-color);
     font-size: var(--heading-xl);
@@ -369,9 +370,31 @@ body {
     align-items: center;
     margin: 0 auto;
     max-width: 1200px;
+    width: 100%;
     border: 1px solid var(--border-color);
     border-radius:var(--radius-m);
     gap: var(--space-24);
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+a.projects-home:hover,
+a.projects-home:focus,
+a.projects-home:focus-visible,
+a.projects-home:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
+a.projects-home:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 4px;
+}
+
+a.projects-home:hover .secondary-button,
+a.projects-home:focus-visible .secondary-button {
+    color: var(--accent-color);
 }
 
 .card-project-home img{
@@ -384,15 +407,6 @@ body {
     align-items: flex-start;
     gap: var(--space-24);
     padding-right: var(--space-24);
-}
-
-.card-project-home-content a {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--space-24);
-    padding-right: var(--space-24);
-    text-decoration: none;
 }
 
 .card-project-home-content h2{
@@ -433,6 +447,7 @@ body {
   max-width: 50%;       /* que no se coma todo el ancho */
 }
 
+.sobre-mi h1,
 .sobre-mi h2 {
   font-size: var(--heading-xl);
   color: var(--text-color);
@@ -583,6 +598,17 @@ body {
 
 
 
+/* Ajuste de espaciado entre "Paso" y su imagen/tabla asociada:
+   la imagen de un paso queda más pegada a su propio texto,
+   y se agrega más separación antes del siguiente paso. */
+.process-project + .hero-project {
+  padding-top: var(--space-24);
+}
+
+.hero-project + .process-project {
+  padding-top: var(--space-64);
+}
+
 /* 📱 Responsive para hero de proyectos */
 @media (max-width: 768px) {
   .hero-project {
@@ -606,6 +632,14 @@ body {
     padding: var(--space-32) var(--space-24);
     max-width: 90%;
 
+  }
+
+  .process-project + .hero-project {
+    padding-top: var(--space-16);
+  }
+
+  .hero-project + .process-project {
+    padding-top: var(--space-64);
   }
 
   .process-project h2 {
